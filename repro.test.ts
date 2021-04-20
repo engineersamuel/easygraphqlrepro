@@ -1,22 +1,8 @@
-// 'use strict' 
-
-// import EasyGraphQLTester from 'easygraphql-tester';
-// import fs from 'fs';
-// import path from 'path';
-
-// const userSchema = fs.readFileSync(path.join(__dirname, 'schema.gql'), 'utf8')
-
-// const tester = new EasyGraphQLTester(userSchema)
-
 import { expect } from 'chai';
 import EasyGraphQLTester from 'easygraphql-tester';
 import fs from 'fs';
 import path from 'path';
-// import { StorageAccount } from '../../src/models/storageAccount';
 
-// export type DataFixture<T> = {
-//     data: {[name: string]: T};
-// }
 const visualizerSchema = fs.readFileSync(path.join(__dirname, 'schema.graphql'), 'utf8')
 
 const storageAccounts = [
@@ -64,8 +50,8 @@ const directoriesFixture = {
         }
     }
 }
-// https://github.com/EasyGraphQL/easygraphql-tester
-describe('query directories', () => { // the tests container
+
+describe('query directories', () => {
 
     let tester: EasyGraphQLTester;
 
