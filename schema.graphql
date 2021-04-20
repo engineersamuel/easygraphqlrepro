@@ -1,0 +1,21 @@
+type StorageAccount {
+    name: String!
+    directories(matches: String): [StorageDirectory]
+}
+
+type StorageDirectory {
+    name: String!
+    files(sampleSize: Int): [StorageFile]
+}
+
+type StorageFile {
+    pathName: String!
+    fileName: String!
+    fullPath: String!
+    lastModified: String
+}
+
+type Query {
+    storageAccounts: [StorageAccount]
+    storageAccount(storageAccountName: String!): StorageAccount
+}
